@@ -1,12 +1,11 @@
 package com.example.first_task.dto.controller;
 
-import com.example.first_task.entity.ServicePoint;
 import com.example.first_task.entity.User;
 import com.example.first_task.model.FirstTaskUserDetails;
-import com.example.first_task.service.UserService;
 import com.example.first_task.service.UserServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;

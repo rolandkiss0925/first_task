@@ -5,6 +5,7 @@ import com.example.first_task.entity.User;
 import com.example.first_task.repository.ServicePointRepository;
 import com.example.first_task.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,6 +20,9 @@ public class UserService implements UserServiceInterface {
     @Autowired
     private ServicePointRepository servicePointRepository;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
     @Override
     public User getUser(String username) {
         return repository.findByUsername(username);
@@ -31,6 +35,7 @@ public class UserService implements UserServiceInterface {
 
     @Override
     public User registerUser(User user) {
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
         return repository.save(user);
     }
 
