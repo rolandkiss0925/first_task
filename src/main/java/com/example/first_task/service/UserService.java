@@ -58,6 +58,7 @@ public class UserService implements UserServiceInterface {
         Optional<User> userOptional = repository.findById(id);
         if (userOptional.isPresent()) {
             user.setId(id);
+            user.setPassword(passwordEncoder.encode(user.getPassword()));
             repository.save(user);
         }
         return user;
