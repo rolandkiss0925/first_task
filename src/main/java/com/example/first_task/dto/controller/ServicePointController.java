@@ -21,7 +21,7 @@ public class ServicePointController {
 
     @DeleteMapping("{id}/patient/{patient_id}")
     public void removePatientFromServicePoint(@PathVariable("id") Long id, @PathVariable("patient_id") Long patient_id) {
-        service.removePatientToServicePoint(id, patient_id);
+        service.removePatientFromServicePoint(id, patient_id);
     }
 
     @GetMapping

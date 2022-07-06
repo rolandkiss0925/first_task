@@ -12,5 +12,5 @@ public interface ServicePointServiceInterface {
     ServicePoint updateServicePoint(Long id, ServicePoint servicePoint);
     List<ServicePoint> findAllServicePoint();
     void addPatientToServicePoint(Long servicePointId, Long patientId);
-    void removePatientToServicePoint(Long servicePointId, Long patientId);
+    void removePatientFromServicePoint(Long servicePointId, Long patientId);
 }

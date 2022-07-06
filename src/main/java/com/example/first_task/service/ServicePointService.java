@@ -60,7 +60,7 @@ public class ServicePointService implements ServicePointServiceInterface{
     }
 
     @Override
-    public void removePatientToServicePoint(Long servicePointId, Long patientId) {
+    public void removePatientFromServicePoint(Long servicePointId, Long patientId) {
         Patient patient = patientRepository.findById(patientId).orElse(null);
         ServicePoint servicePoint = repository.findById(servicePointId).orElse(null);
         if (servicePoint != null && patient != null) {
