@@ -26,5 +26,11 @@ public class DataLoader implements ApplicationRunner {
         user.setPassword(passwordEncoder.encode("admin"));
         user.setUsername("admin");
         userRepository.save(user);
+
+        User secondUser = new User();
+        secondUser.setIsActive(true);
+        secondUser.setPassword(passwordEncoder.encode("abc123"));
+        secondUser.setUsername("user");
+        userRepository.save(secondUser);
     }
 }
